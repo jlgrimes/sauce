@@ -9,15 +9,15 @@ import SwiftUI
 import MapKit
 
 struct MapViewController: View {
-    let place = IdentifiablePlace(id: UUID(), lat: 25.7617, long: 80.1918)
+    let place = IdentifiablePlace(id: UUID(), lat: 40.75773, long: -73.985708)
     @State var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
-            latitude: 25.7617,
-            longitude: 80.1918
+            latitude: 40.75773,
+            longitude: -73.985708
         ),
         span: MKCoordinateSpan(
-            latitudeDelta: 10,
-            longitudeDelta: 10
+            latitudeDelta: 0.05,
+            longitudeDelta: 0.05
         )
     )
 
