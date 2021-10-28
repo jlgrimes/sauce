@@ -14,6 +14,8 @@
 		B3D687EA272A2C1300DABFD5 /* SauceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687E9272A2C1300DABFD5 /* SauceTests.swift */; };
 		B3D687F4272A2C1300DABFD5 /* SauceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687F3272A2C1300DABFD5 /* SauceUITests.swift */; };
 		B3D687F6272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687F5272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift */; };
+		B3D68804272A2EAE00DABFD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68803272A2EAE00DABFD5 /* MapViewController.swift */; };
+		B3D68809272A404800DABFD5 /* IdentifiablePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68808272A404800DABFD5 /* IdentifiablePlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		B3D687EF272A2C1300DABFD5 /* SauceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SauceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687F3272A2C1300DABFD5 /* SauceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceUITests.swift; sourceTree = "<group>"; };
 		B3D687F5272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B3D68803272A2EAE00DABFD5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B3D68808272A404800DABFD5 /* IdentifiablePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiablePlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		B3D687D7272A2C1200DABFD5 /* Sauce */ = {
 			isa = PBXGroup;
 			children = (
+				B3D68805272A2F8B00DABFD5 /* Models */,
+				B3D68802272A2E9600DABFD5 /* Controllers */,
 				B3D687D8272A2C1200DABFD5 /* SauceApp.swift */,
 				B3D687DA272A2C1200DABFD5 /* ContentView.swift */,
 				B3D687DC272A2C1300DABFD5 /* Assets.xcassets */,
@@ -125,6 +131,22 @@
 				B3D687F5272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift */,
 			);
 			path = SauceUITests;
+			sourceTree = "<group>";
+		};
+		B3D68802272A2E9600DABFD5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3D68803272A2EAE00DABFD5 /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3D68805272A2F8B00DABFD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3D68808272A404800DABFD5 /* IdentifiablePlace.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */,
+				B3D68804272A2EAE00DABFD5 /* MapViewController.swift in Sources */,
 				B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */,
+				B3D68809272A404800DABFD5 /* IdentifiablePlace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
