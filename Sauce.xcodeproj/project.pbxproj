@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */; };
 		B3154A4B272DD380005BD745 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = B3154A4A272DD380005BD745 /* BottomSheet */; };
+		B3154A4E272DF5FA005BD745 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A4D272DF5FA005BD745 /* MapView.swift */; };
+		B3154A50272DFDF7005BD745 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A4F272DFDF7005BD745 /* SampleData.swift */; };
+		B3154A52272DFFEE005BD745 /* AddPlaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A51272DFFEE005BD745 /* AddPlaceButton.swift */; };
+		B3154A55272E0041005BD745 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A54272E0041005BD745 /* Map.swift */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
+		B3154A4D272DF5FA005BD745 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B3154A4F272DFDF7005BD745 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		B3154A51272DFFEE005BD745 /* AddPlaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceButton.swift; sourceTree = "<group>"; };
+		B3154A54272E0041005BD745 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
 		B3D687DA272A2C1200DABFD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,9 +90,28 @@
 		B3154A42272DB2FC005BD745 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */,
+				B3154A4C272DF5DC005BD745 /* Map */,
+				B3154A51272DFFEE005BD745 /* AddPlaceButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B3154A4C272DF5DC005BD745 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */,
+				B3154A4D272DF5FA005BD745 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B3154A53272E0025005BD745 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B3154A4F272DFDF7005BD745 /* SampleData.swift */,
+				B3154A54272E0041005BD745 /* Map.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		B3D687CC272A2C1200DABFD5 = {
@@ -110,6 +137,7 @@
 		B3D687D7272A2C1200DABFD5 /* Sauce */ = {
 			isa = PBXGroup;
 			children = (
+				B3154A53272E0025005BD745 /* Constants */,
 				B3154A42272DB2FC005BD745 /* Views */,
 				B3D68805272A2F8B00DABFD5 /* Models */,
 				B3D68802272A2E9600DABFD5 /* Controllers */,
@@ -299,9 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */,
+				B3154A52272DFFEE005BD745 /* AddPlaceButton.swift in Sources */,
+				B3154A50272DFDF7005BD745 /* SampleData.swift in Sources */,
+				B3154A4E272DF5FA005BD745 /* MapView.swift in Sources */,
 				B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */,
 				B3D68804272A2EAE00DABFD5 /* MapViewController.swift in Sources */,
 				B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */,
+				B3154A55272E0041005BD745 /* Map.swift in Sources */,
 				B3D68809272A404800DABFD5 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
