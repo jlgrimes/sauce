@@ -39,8 +39,15 @@ struct MapViewController: View {
             MapAnnotation(coordinate: place.coordinate) {
                 PlaceAnnotationView(place: place, bottomSheetPosition: $bottomSheetPosition, selectedPlace: $selectedPlace)
             }
-        }.bottomSheet(bottomSheetPosition: self.$bottomSheetPosition, headerContent: {
-            Text(selectedPlace.name).font(.title).bold()
+        }.bottomSheet(
+            bottomSheetPosition: self.$bottomSheetPosition,
+            options: [
+                .noDragIndicator,
+                .swipeToDismiss,
+                .tapToDissmiss
+            ],
+            headerContent: {
+                Text(selectedPlace.name).font(.title).bold()
         }) {
             Text("hi")
         }
