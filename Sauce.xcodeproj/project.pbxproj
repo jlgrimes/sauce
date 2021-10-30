@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3154A44272DB30D005BD745 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A43272DB30D005BD745 /* BottomSheetView.swift */; };
 		B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */; };
+		B3154A4B272DD380005BD745 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = B3154A4A272DD380005BD745 /* BottomSheet */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -17,7 +17,7 @@
 		B3D687F4272A2C1300DABFD5 /* SauceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687F3272A2C1300DABFD5 /* SauceUITests.swift */; };
 		B3D687F6272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687F5272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift */; };
 		B3D68804272A2EAE00DABFD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68803272A2EAE00DABFD5 /* MapViewController.swift */; };
-		B3D68809272A404800DABFD5 /* IdentifiablePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68808272A404800DABFD5 /* IdentifiablePlace.swift */; };
+		B3D68809272A404800DABFD5 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68808272A404800DABFD5 /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B3154A43272DB30D005BD745 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
@@ -51,7 +50,7 @@
 		B3D687F3272A2C1300DABFD5 /* SauceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceUITests.swift; sourceTree = "<group>"; };
 		B3D687F5272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3D68803272A2EAE00DABFD5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		B3D68808272A404800DABFD5 /* IdentifiablePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiablePlace.swift; sourceTree = "<group>"; };
+		B3D68808272A404800DABFD5 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3154A4B272DD380005BD745 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,6 @@
 		B3154A42272DB2FC005BD745 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3154A43272DB30D005BD745 /* BottomSheetView.swift */,
 				B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */,
 			);
 			path = Views;
@@ -158,7 +157,7 @@
 		B3D68805272A2F8B00DABFD5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B3D68808272A404800DABFD5 /* IdentifiablePlace.swift */,
+				B3D68808272A404800DABFD5 /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +178,9 @@
 			dependencies = (
 			);
 			name = Sauce;
+			packageProductDependencies = (
+				B3154A4A272DD380005BD745 /* BottomSheet */,
+			);
 			productName = Sauce;
 			productReference = B3D687D5272A2C1200DABFD5 /* Sauce.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +253,9 @@
 				Base,
 			);
 			mainGroup = B3D687CC272A2C1200DABFD5;
+			packageReferences = (
+				B3154A49272DD380005BD745 /* XCRemoteSwiftPackageReference "BottomSheet" */,
+			);
 			productRefGroup = B3D687D6272A2C1200DABFD5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,11 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */,
-				B3154A44272DB30D005BD745 /* BottomSheetView.swift in Sources */,
 				B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */,
 				B3D68804272A2EAE00DABFD5 /* MapViewController.swift in Sources */,
 				B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */,
-				B3D68809272A404800DABFD5 /* IdentifiablePlace.swift in Sources */,
+				B3D68809272A404800DABFD5 /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +649,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3154A49272DD380005BD745 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LucasMucGH/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3154A4A272DD380005BD745 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3154A49272DD380005BD745 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3D687CD272A2C1200DABFD5 /* Project object */;
 }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct PlaceAnnotationView: View {
-  let title: String
-    @Binding var bottomSheetShown: Bool
+    let place: Place
+    @Binding var bottomSheetPosition: BottomSheetPosition
+    @Binding var selectedPlace: Place
   
-  var body: some View {
+    var body: some View {
       VStack {
           Image(systemName: "mappin.circle.fill")
             .font(.title)
@@ -22,7 +23,8 @@ struct PlaceAnnotationView: View {
             .foregroundColor(.red)
             .offset(x: 0, y: -5)
       }.onTapGesture {
-          bottomSheetShown.toggle()
+          bottomSheetPosition = .bottom
+          selectedPlace = place
       }
   }
 }
