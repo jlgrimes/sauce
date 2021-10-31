@@ -9,12 +9,16 @@ import SwiftUI
 import MapKit
 
 struct PlaceShortDisplayView: View {
-    var place: MKMapItem = MKMapItem()
+    var place: MKMapItem?
     var onSelect: (MKMapItem) -> Void = void
     var loading: Bool = false
     
     init(loading: Bool) {
         self.loading = loading
+    }
+    
+    init(place: MKMapItem?) {
+        self.place = place
     }
     
     init(place: MKMapItem, onSelect: @escaping (MKMapItem) -> Void) {
@@ -30,11 +34,11 @@ struct PlaceShortDisplayView: View {
                 .padding(5.0)
         } else {
             VStack(alignment: .leading) {
-                Text(place.name!)
-                Text(place.placemark.formattedAddress ?? "")
+                Text(place?.name!)
+                Text(place?.placemark.formattedAddress ?? "")
                     .font(.caption)
             }.padding(5.0).onTapGesture {
-                onSelect(place)
+                onSelect(place!)
             }
         }
     }

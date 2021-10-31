@@ -14,8 +14,14 @@ struct AddPlaceController: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: PlaceSearchController(onSelect: void).navigationBarTitle("Search")) {
-                    SearchBarView(value: .constant(""), onChange: void)
+                NavigationLink(destination: PlaceSearchController(onSelect: { place in
+                        selectedPlace = place
+                }).navigationBarTitle("Search")) {
+                    if (selectedPlace == nil) {
+                        SearchBarView(value: .constant(""), onChange: void)
+                    } else {
+                        PlaceShortDisplayView(place: selectedPlace)
+                    }
                 }
                 AddPlaceView()
             }
