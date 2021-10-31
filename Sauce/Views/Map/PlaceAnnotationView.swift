@@ -21,7 +21,7 @@ struct PlaceAnnotationView: View {
     }
     
     func getColor() -> Color {
-        return Color(rgb: RATING_COLORS[rating - 1])
+        return Color(rgb: getColorFromRating(rating: rating))
     }
     
     func getNumberString() -> String {

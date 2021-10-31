@@ -24,3 +24,11 @@ var RATING_COLORS = [
     0xffd166,
     0x06d6a0
 ];
+
+func getColorFromRating(rating: Int) -> Int {
+    guard rating >= 1 && rating <= 10 else {
+        return 0
+    }
+    
+    return RATING_COLORS[rating - 1]
+}
