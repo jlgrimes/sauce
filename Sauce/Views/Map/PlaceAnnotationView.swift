@@ -8,15 +8,8 @@
 import SwiftUI
 
 struct PlaceAnnotationView: View {
-    var selected: Bool
-    
-    init() {
-        selected = false
-    }
-    
-    init(selected: Bool) {
-        self.selected = selected
-    }
+    var selected: Bool = false
+    var rating: Int = -1
     
     func getSize() -> CGFloat {
         if selected {
@@ -26,17 +19,36 @@ struct PlaceAnnotationView: View {
         return 30
     }
     
+    func getColor() -> Color {
+        if rating == -1 {
+            return .red
+        }
+        
+        return Color(rgb: RATING_COLORS[rating - 1])
+    }
+    
+    func getNumberString() -> String {
+        if rating == -1 {
+            return ""
+        }
+        
+        return String(rating)
+    }
+    
     var body: some View {
       VStack {
-          Image(systemName: "mappin.circle.fill")
+          Image(systemName: "circle.fill")
               .resizable().frame(width: self.getSize(), height: self.getSize())
             .font(.title)
-            .foregroundColor(.red)
+            .foregroundColor(getColor())
+            .overlay(Text(getNumberString())
+                        .font(.headline)
+                        .foregroundColor(.white))
             .scaleEffect()
           
           Image(systemName: "arrowtriangle.down.fill")
             .font(.caption)
-            .foregroundColor(.red)
+            .foregroundColor(getColor())
             .offset(x: 0, y: -5)
       }
   }
@@ -44,9 +56,16 @@ struct PlaceAnnotationView: View {
 
 struct PlaceAnnotationView_Previews: PreviewProvider {
   static var previews: some View {
-      HStack {
-          PlaceAnnotationView()
-          PlaceAnnotationView(selected: true)
+      VStack {
+          HStack {
+              ForEach(0..<RATING_COLORS.count) { index in
+                  PlaceAnnotationView(rating: index + 1)
+              }
+          }
+          HStack {
+              PlaceAnnotationView()
+              PlaceAnnotationView(selected: true)
+          }
       }
   }
 }

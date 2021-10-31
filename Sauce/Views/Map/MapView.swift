@@ -19,7 +19,9 @@ struct MapView: View {
             annotationItems: places
         ) { place in
             MapAnnotation(coordinate: place.coordinate) {
-                PlaceAnnotationView(selected: bottomSheetPosition != .hidden && selectedPlace.id == place.id)
+                PlaceAnnotationView(
+                    selected: bottomSheetPosition != .hidden && selectedPlace.id == place.id,
+                    rating: place.rating)
                     .onTapGesture {
                         bottomSheetPosition = .bottom
                         selectedPlace = place
@@ -37,9 +39,11 @@ struct MapView: View {
                         Text(selectedPlace.name)
                             .font(.title)
                             .bold()
+                            // Allows text overflow to happen
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                         Text(String(selectedPlace.rating))
-                            .font(.title)
+                            .font(.headline)
                             .bold()
                             .padding(.trailing)
                     }
@@ -56,6 +60,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(places: SAMPLE_PLACES, region: SAMPLE_REGION, selectedPlace: .constant(SAMPLE_PLACES[0]), bottomSheetPosition: .constant(.bottom))
+        MapView(places: SAMPLE_PLACES, region: SAMPLE_REGION, selectedPlace: .constant(SAMPLE_PLACES[1]), bottomSheetPosition: .constant(.bottom))
     }
 }
