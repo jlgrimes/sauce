@@ -52,7 +52,7 @@ struct MapView: View {
                 }
         }) {
             Text("hi")
-        }.navigationTitle("New York")
+        }.navigationBarHidden(true)
     }
 }
 

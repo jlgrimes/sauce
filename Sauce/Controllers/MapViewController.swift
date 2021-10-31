@@ -12,28 +12,16 @@ import BottomSheet
 struct MapViewController: View {
     let places = SAMPLE_PLACES
     @State var region = SAMPLE_REGION
-    @State private var bottomSheetPosition: BottomSheetPosition = .hidden
+    @Binding var bottomSheetPosition: BottomSheetPosition
     @State private var selectedPlace: Place = Place()
     
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                MapView(places: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
-                
-                if bottomSheetPosition == .hidden {
-                    NavigationLink(
-                        destination: AddPlaceView(), // <1>
-                        label: {
-                            AddPlaceButton()
-                        })
-                }
-            }
-        }
+        MapView(places: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
     }
 }
 
 struct MapViewController_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewController()
+        MapViewController(bottomSheetPosition: .constant(.bottom))
     }
 }

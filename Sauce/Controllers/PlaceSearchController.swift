@@ -21,6 +21,7 @@ struct PlaceSearchController: View {
     }
     
     @State var queryString: String = ""
+    @State var resultsLoading: Bool = false
     
     @State var localSearch: MKLocalSearch? {
         willSet {
@@ -32,6 +33,7 @@ struct PlaceSearchController: View {
     
     /// - Parameter queryString: A search string from the text the user entered into `UISearchBar`
     func search(queryString: String) -> Void {
+        resultsLoading = true
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = queryString
         search(using: searchRequest)
@@ -46,6 +48,7 @@ struct PlaceSearchController: View {
 
         localSearch = MKLocalSearch(request: searchRequest)
         localSearch?.start { [self] (response, error) in
+            resultsLoading = false
             guard error == nil else {
                 // self.displaySearchError(error)
                 return
@@ -61,7 +64,7 @@ struct PlaceSearchController: View {
     }
 
     var body: some View {
-        PlaceSearchView(onChange: self.search, places: $places)
+        PlaceSearchView(onChange: self.search, places: $places, resultsLoading: $resultsLoading)
     }
 }
 

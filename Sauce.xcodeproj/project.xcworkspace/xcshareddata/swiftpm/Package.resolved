@@ -9,6 +9,24 @@
           "revision": "953c9a53d05ed7b61ae50a476758a97b7291da0a",
           "version": "2.4.0"
         }
+      },
+      {
+        "package": "SkeletonUI",
+        "repositoryURL": "https://github.com/CSolanaM/SkeletonUI.git",
+        "state": {
+          "branch": null,
+          "revision": "1ccb7eae3f449b1edf72bbde88e4c1934ed1eaac",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "SnapshotTesting",
+        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing",
+        "state": {
+          "branch": null,
+          "revision": "f8a9c997c3c1dab4e216a8ec9014e23144cbab37",
+          "version": "1.9.0"
+        }
       }
     ]
   },
