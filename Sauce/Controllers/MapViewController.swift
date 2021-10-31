@@ -21,7 +21,11 @@ struct MapViewController: View {
                 MapView(places: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
                 
                 if bottomSheetPosition == .hidden {
-                    AddPlaceButton()
+                    NavigationLink(
+                        destination: AddPlaceView(), // <1>
+                        label: {
+                            AddPlaceButton()
+                        })
                 }
             }
         }

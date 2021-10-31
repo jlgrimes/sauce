@@ -9,22 +9,20 @@ import SwiftUI
 
 struct AddPlaceButton: View {
     var body: some View {
-        Button(action: {
-        }, label: {
-            Text("+")
-            .font(.system(.largeTitle))
-            .frame(width: 67, height: 60
-            )
-            .foregroundColor(Color.white)
-            .padding(.bottom, 7)
-        })
-        .background(Color.blue)
-        .cornerRadius(38.5)
-        .padding()
-        .shadow(color: Color.black.opacity(0.3),
-                radius: 3,
-                x: 3,
-                y: 3)
+        VStack {
+            Image(systemName: "circle.fill")
+                .resizable().frame(width: 60, height: 60)
+                .foregroundColor(Color.blue)
+                .padding()
+                .overlay(Text("+")
+                            .foregroundColor(.white)
+                            .font(.system(.largeTitle))
+                            .padding(.bottom, 6))
+                .shadow(color: Color.black.opacity(0.3),
+                        radius: 3,
+                        x: 3,
+                        y: 3)
+        }
     }
 }
 
