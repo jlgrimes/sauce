@@ -23,7 +23,7 @@ struct PlacesViewController: View {
             
             if bottomSheetPosition == .hidden {
                 NavigationLink(
-                    destination: AddPlaceView(), // <1>
+                    destination: AddPlaceController(), // <1>
                     label: {
                         AddPlaceButton()
                     })

@@ -23,7 +23,6 @@ struct AppController: View {
                             Text("Third")
                         }
                 }
-                .zIndex(1)
                 .font(.headline)
             }
         }.navigationBarHidden(true)

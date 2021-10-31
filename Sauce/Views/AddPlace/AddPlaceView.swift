@@ -67,12 +67,14 @@ struct AddPlaceView: View {
                     
                 }
             }
-        }.navigationBarTitle("Add new view")
+        }.navigationBarTitle("Add new place")
     }
 }
 
 struct AddPlaceView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlaceView()
+        NavigationView {
+            AddPlaceView()
+        }
     }
 }

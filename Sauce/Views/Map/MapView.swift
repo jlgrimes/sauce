@@ -38,7 +38,7 @@ struct MapView: View {
                 PlaceSheetHeaderView(place: selectedPlace)
             }) {
             Text("hi")
-        }.zIndex(2).navigationBarHidden(true)
+        }.navigationBarHidden(true)
     }
 }
 

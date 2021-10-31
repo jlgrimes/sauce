@@ -12,25 +12,25 @@ struct AddPlaceController: View {
     @State var selectedPlace: MKMapItem?
     
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: PlaceSearchController(onSelect: { place in
-                        selectedPlace = place
-                }).navigationBarTitle("Search")) {
-                    if (selectedPlace == nil) {
-                        SearchBarView(value: .constant(""), onChange: void)
-                    } else {
-                        PlaceShortDisplayView(place: selectedPlace)
-                    }
+        VStack {
+            NavigationLink(destination: PlaceSearchController(onSelect: { place in
+                    selectedPlace = place
+            }).navigationBarTitle("Search")) {
+                if (selectedPlace == nil) {
+                    SearchBarView(value: .constant(""), onChange: void)
+                } else {
+                    PlaceShortDisplayView(place: selectedPlace).allowsHitTesting(false)
                 }
-                AddPlaceView()
             }
+            AddPlaceView()
         }
     }
 }
 
 struct AddPlaceController_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlaceController()
+        NavigationView {
+            AddPlaceController()
+        }
     }
 }
