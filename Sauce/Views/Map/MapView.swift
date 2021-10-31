@@ -35,24 +35,10 @@ struct MapView: View {
                 .swipeToDismiss
             ],
             headerContent: {
-                VStack(alignment: .leading) {
-                    HStack(alignment: .center) {
-                        Text(selectedPlace.name)
-                            .font(.title)
-                            .bold()
-                            // Allows text overflow to happen
-                            .fixedSize(horizontal: false, vertical: true)
-                        Spacer()
-                        PlaceAnnotationView(rating: selectedPlace.rating, hideFeatures: true)
-                    }
-                    HStack {
-                        Text(selectedPlace.cuisine)
-                        Text(String(repeating: "$", count: selectedPlace.price))
-                    }
-                }
-        }) {
+                PlaceSheetHeaderView(place: selectedPlace)
+            }) {
             Text("hi")
-        }.navigationBarHidden(true)
+        }.zIndex(2).navigationBarHidden(true)
     }
 }
 
