@@ -18,7 +18,7 @@ struct MapViewController: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                MapView(places: places, region: region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
+                MapView(places: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
                 
                 if bottomSheetPosition == .hidden {
                     AddPlaceButton()

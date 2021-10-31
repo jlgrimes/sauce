@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum BottomSheetPosition: CGFloat, CaseIterable {
-    case high = 0.8, bottom = 0.4, hidden = 0
+    case high = 0.8, bottom = 0.25, hidden = 0
 }
 
 var RATING_COLORS = [

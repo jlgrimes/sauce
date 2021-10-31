@@ -10,7 +10,7 @@ import MapKit
 
 struct MapView: View {
     var places: Array<Place>
-    @State var region: MKCoordinateRegion
+    @Binding var region: MKCoordinateRegion
     @Binding var selectedPlace: Place
     @Binding var bottomSheetPosition: BottomSheetPosition
     
@@ -25,6 +25,7 @@ struct MapView: View {
                     .onTapGesture {
                         bottomSheetPosition = .bottom
                         selectedPlace = place
+                        region.center = selectedPlace.coordinate
                     }
             }
         }.bottomSheet(
@@ -57,6 +58,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(places: SAMPLE_PLACES, region: SAMPLE_REGION, selectedPlace: .constant(SAMPLE_PLACES[1]), bottomSheetPosition: .constant(.bottom))
+        MapView(places: SAMPLE_PLACES, region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_PLACES[1]), bottomSheetPosition: .constant(.bottom))
     }
 }
