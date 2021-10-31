@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PlaceAnnotationView: View {
     var selected: Bool = false
-    var rating: Int = -1
+    var rating: Int = 5
+    var hideFeatures: Bool = false
     
     func getSize() -> CGFloat {
         if selected {
@@ -20,36 +21,53 @@ struct PlaceAnnotationView: View {
     }
     
     func getColor() -> Color {
-        if rating == -1 {
-            return .red
-        }
-        
         return Color(rgb: RATING_COLORS[rating - 1])
     }
     
     func getNumberString() -> String {
-        if rating == -1 {
-            return ""
+        return String(rating)
+    }
+    
+    func getTextSize() -> CGFloat {
+        if selected {
+            return 20
         }
         
-        return String(rating)
+        return 16
+    }
+    
+    func getShadowOpacity() -> CGFloat {
+        if hideFeatures {
+            return 0
+        }
+        
+        if selected {
+            return 0.4
+        }
+        
+        return 0.2
     }
     
     var body: some View {
       VStack {
           Image(systemName: "circle.fill")
               .resizable().frame(width: self.getSize(), height: self.getSize())
-            .font(.title)
             .foregroundColor(getColor())
             .overlay(Text(getNumberString())
-                        .font(.headline)
-                        .foregroundColor(.white))
+                        .foregroundColor(.white)
+                        .font(.system(size: getTextSize(), weight: .bold)))
             .scaleEffect()
+            .shadow(color: Color.black.opacity(getShadowOpacity()),
+                    radius: 3,
+                    x: 3,
+                    y: 3)
           
-          Image(systemName: "arrowtriangle.down.fill")
-            .font(.caption)
-            .foregroundColor(getColor())
-            .offset(x: 0, y: -5)
+          if !hideFeatures {
+              Image(systemName: "arrowtriangle.down.fill")
+                .font(.caption)
+                .foregroundColor(getColor())
+                .offset(x: 0, y: -5)
+          }
       }
   }
 }
@@ -65,6 +83,8 @@ struct PlaceAnnotationView_Previews: PreviewProvider {
           HStack {
               PlaceAnnotationView()
               PlaceAnnotationView(selected: true)
+              PlaceAnnotationView(hideFeatures: true)
+
           }
       }
   }

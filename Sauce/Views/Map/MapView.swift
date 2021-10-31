@@ -42,10 +42,7 @@ struct MapView: View {
                             // Allows text overflow to happen
                             .fixedSize(horizontal: false, vertical: true)
                         Spacer()
-                        Text(String(selectedPlace.rating))
-                            .font(.headline)
-                            .bold()
-                            .padding(.trailing)
+                        PlaceAnnotationView(rating: selectedPlace.rating, hideFeatures: true)
                     }
                     HStack {
                         Text(selectedPlace.cuisine)
