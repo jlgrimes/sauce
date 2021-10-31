@@ -10,23 +10,28 @@ import SkeletonUI
 import MapKit
 
 func void(str: String) -> Void {}
+func void(str: MKMapItem) -> Void {}
 
 struct PlaceSearchView: View {
     @State var value: String = ""
     var onChange: (String) -> Void
     @Binding var places: [MKMapItem]?
     @Binding var resultsLoading: Bool
+    var onSelect: (MKMapItem) -> Void
     // Tracks initial state of view
     @State var initialState: Bool = true
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         VStack {
-            TextField(
-                "Search for a place",
-                text: $value
-            ).padding(5.0).onChange(of: value, perform: { newValue in
+            SearchBarView(value: $value, onChange: { newValue in
                 onChange(newValue)
                 initialState = false
+            }).focused($isFocused).onAppear(perform: {
+                // key part: delay setting isFocused until after some-internal-iOS setup
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                  isFocused = true
+                }
             })
             List {
                 if initialState == false && resultsLoading == false && value != "" && (places == nil) {
@@ -36,19 +41,12 @@ struct PlaceSearchView: View {
                 if resultsLoading == true {
                     ForEach(0..<10, id: \.self) { place in
                         VStack(alignment: .leading) {
-                            Text("Some name of a place")
-                                .skeleton(with: true)
-                                .multiline(lines: 2, scales: [1: 0.5])
-                                .padding(5.0)
+                            PlaceShortDisplayView(loading: true)
                         }
                     }
                 } else {
                     ForEach(places ?? [], id: \.self) { place in
-                        VStack(alignment: .leading) {
-                            Text(place.name!)
-                            Text(place.placemark.formattedAddress ?? "")
-                                .font(.caption)
-                        }.padding(5.0)
+                        PlaceShortDisplayView(place: place, onSelect: onSelect)
                     }
                 }
             }
@@ -58,6 +56,6 @@ struct PlaceSearchView: View {
 
 struct PlaceSearch_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceSearchView(onChange: void, places: .constant([]), resultsLoading: .constant(false))
+        PlaceSearchView(onChange: void, places: .constant([]), resultsLoading: .constant(false), onSelect: void)
     }
 }

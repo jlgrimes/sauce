@@ -31,6 +31,11 @@ struct PlaceSearchController: View {
         }
     }
     
+    var onSelect: (MKMapItem) -> Void
+    
+    // Used for going back in parent
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     /// - Parameter queryString: A search string from the text the user entered into `UISearchBar`
     func search(queryString: String) -> Void {
         resultsLoading = true
@@ -64,12 +69,16 @@ struct PlaceSearchController: View {
     }
 
     var body: some View {
-        PlaceSearchView(onChange: self.search, places: $places, resultsLoading: $resultsLoading)
+        PlaceSearchView(onChange: self.search, places: $places, resultsLoading: $resultsLoading, onSelect: { place in
+                onSelect(place)
+                presentationMode.wrappedValue.dismiss()
+            }
+        )
     }
 }
 
 struct PlaceSearchController_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceSearchController()
+        PlaceSearchController(onSelect: void)
     }
 }
