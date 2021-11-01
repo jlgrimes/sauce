@@ -1,0 +1,15 @@
+enum MethodOfEat {
+  DINE_IN
+  EAT_AT
+  PICKUP
+  DELIVERY
+}
+
+type Entry @model {
+  id: ID!
+  coordinate: [Float]!
+  rating: Int!
+  cuisine: String
+  price: Int
+  method: MethodOfEat
+}
