@@ -86,9 +86,9 @@ struct PlaceAnnotationView_Previews: PreviewProvider {
           }
           HStack {
               PlaceAnnotationView()
+              PlaceAnnotationView(rating: 5.5)
               PlaceAnnotationView(selected: true)
               PlaceAnnotationView(hideFeatures: true)
-
           }
       }
   }
