@@ -10,13 +10,13 @@ import MapKit
 import BottomSheet
 
 struct MapViewController: View {
-    let places = SAMPLE_PLACES
+    let places: AllPlaces = SAMPLE_ALL_PLACES
     @State var region = SAMPLE_REGION
     @Binding var bottomSheetPosition: BottomSheetPosition
-    @State private var selectedPlace: Place = Place()
+    @State private var selectedPlace: Place = SAMPLE_PLACE
     
     var body: some View {
-        MapView(places: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
+        MapView(allPlaces: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
     }
 }
 

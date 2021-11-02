@@ -9,23 +9,23 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    var places: Array<Place>
+    var allPlaces: AllPlaces
     @Binding var region: MKCoordinateRegion
     @Binding var selectedPlace: Place
     @Binding var bottomSheetPosition: BottomSheetPosition
     
     var body: some View {
         Map(coordinateRegion: $region,
-            annotationItems: places
+            annotationItems: allPlaces.getPlaces()
         ) { place in
-            MapAnnotation(coordinate: place.coordinate) {
+            MapAnnotation(coordinate: place.getPlacemark().coordinate) {
                 PlaceAnnotationView(
                     selected: bottomSheetPosition != .hidden && selectedPlace.id == place.id,
-                    rating: place.rating)
+                    rating: place.getAverageRating())
                     .onTapGesture {
                         bottomSheetPosition = .bottom
                         selectedPlace = place
-                        region.center = selectedPlace.coordinate
+                        region.center = selectedPlace.getPlacemark().coordinate
                     }
             }
         }.bottomSheet(
@@ -44,6 +44,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(places: SAMPLE_PLACES, region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_PLACES[1]), bottomSheetPosition: .constant(.bottom))
+        MapView(allPlaces: SAMPLE_ALL_PLACES, region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_ALL_PLACES.getPlaces()[1]), bottomSheetPosition: .constant(.bottom))
     }
 }

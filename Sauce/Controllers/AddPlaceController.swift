@@ -11,6 +11,10 @@ import MapKit
 struct AddPlaceController: View {
     @State var selectedPlace: MKMapItem?
     
+    func onSubmit(date: Date, price: String, methodOfEat: MethodOfEat, cuisineType: String, order: String, rating: Float, otherThoughts: String) {
+        print("hi")
+    }
+    
     var body: some View {
         VStack {
             NavigationLink(destination: PlaceSearchController(onSelect: { place in

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlaceAnnotationView: View {
     var selected: Bool = false
-    var rating: Int = 5
+    var rating: Float = 5.0
     var hideFeatures: Bool = false
     
     func getSize() -> CGFloat {
@@ -25,6 +25,10 @@ struct PlaceAnnotationView: View {
     }
     
     func getNumberString() -> String {
+        if (rating.truncatingRemainder(dividingBy: 1) == 0) {
+            return String(Int(rating))
+        }
+        
         return String(rating)
     }
     
@@ -77,7 +81,7 @@ struct PlaceAnnotationView_Previews: PreviewProvider {
       VStack {
           HStack {
               ForEach(0..<RATING_COLORS.count) { index in
-                  PlaceAnnotationView(rating: index + 1)
+                  PlaceAnnotationView(rating: Float(index + 1))
               }
           }
           HStack {

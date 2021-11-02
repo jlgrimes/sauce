@@ -19,11 +19,11 @@ struct PlaceSheetHeaderView: View {
                     // Allows text overflow to happen
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer()
-                PlaceAnnotationView(rating: place.rating, hideFeatures: true)
+                PlaceAnnotationView(rating: place.getAverageRating(), hideFeatures: true)
             }
             HStack {
-                Text(place.cuisine)
-                Text(String(repeating: "$", count: place.price))
+                Text(place.getCuisineTypes())
+                Text(String(repeating: "$", count: place.getAveragePrice()))
             }
         }
     }
@@ -31,6 +31,6 @@ struct PlaceSheetHeaderView: View {
 
 struct PlaceSheetHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceSheetHeaderView(place: SAMPLE_PLACES[0])
+        PlaceSheetHeaderView(place: SAMPLE_PLACE)
     }
 }

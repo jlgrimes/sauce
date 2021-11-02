@@ -5,11 +5,18 @@ enum MethodOfEat {
   DELIVERY
 }
 
+type PlaceData {
+  coordinate: [Float]!
+  name: String!
+}
+
 type Entry @model {
   id: ID!
-  coordinate: [Float]!
+  place: PlaceData!
+  order: String!
   rating: Int!
   cuisine: String
   price: Int
   method: MethodOfEat
+  thoughts: String
 }

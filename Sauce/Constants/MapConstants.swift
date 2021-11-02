@@ -25,10 +25,10 @@ var RATING_COLORS = [
     0x06d6a0
 ];
 
-func getColorFromRating(rating: Int) -> Int {
+func getColorFromRating(rating: Float) -> Int {
     guard rating >= 1 && rating <= 10 else {
         return 0
     }
     
-    return RATING_COLORS[rating - 1]
+    return RATING_COLORS[Int(rating) - 1]
 }

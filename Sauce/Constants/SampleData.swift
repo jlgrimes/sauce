@@ -19,21 +19,30 @@ var SAMPLE_REGION: MKCoordinateRegion = MKCoordinateRegion(
     )
 )
 
-var SAMPLE_PLACES: Array<Place> = [
-    Place(
-        id: UUID(),
-        name: "Empire State Cafe",
-        coordinate: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664),
-        rating: 8,
-        cuisine: "Cafe",
-        price: 2
-    ),
-    Place(
-        id: UUID(),
-        name: "Hard Rock Times Square",
-        coordinate: CLLocationCoordinate2D(latitude: 40.759010, longitude: -73.984474),
-        rating: 7,
-        cuisine: "American",
-        price: 3
-    )
-]
+var SAMPLE_PLACE = Place(placeEntry: PlaceEntry(
+    order: "Baconeggandcheese",
+    rating: 8,
+    cuisine: "Cafe",
+    price: 2,
+    method: .dineIn
+), coordinate: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), name: "Empire State Cafe")
+
+var SAMPLE_ALL_PLACES: AllPlaces = AllPlaces(places: [
+    SAMPLE_PLACE,
+    Place(placeEntries: [
+        PlaceEntry(
+            order: "Gold plated burger, side of fries",
+            rating: 8,
+            cuisine: "American",
+            price: 3,
+            method: .dineIn
+        ),
+        PlaceEntry(
+            order: "1 Diet Coke",
+            rating: 9,
+            cuisine: "American",
+            price: 1,
+            method: .dineIn
+        )
+    ], coordinate: CLLocationCoordinate2D(latitude: 40.759010, longitude: -73.984474), name: "Hard Rock Cafe Times Square")
+])
