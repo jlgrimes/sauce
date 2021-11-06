@@ -12,6 +12,7 @@ type PlaceData {
 
 type Entry @model {
   id: ID!
+  userID: ID!
   time: AWSDateTime!
   place: PlaceData!
   order: String!

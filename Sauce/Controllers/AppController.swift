@@ -3,7 +3,7 @@ import MapKit
 import BottomSheet
 
 struct AppController: View {
-    @StateObject var store: AppStore = AppStore()
+    @StateObject var mapState: MapState = MapState()
     
     var body: some View {
         NavigationView {
@@ -29,22 +29,22 @@ struct AppController: View {
                 }
                 .font(.headline)
                 .bottomSheet(
-                    bottomSheetPosition: $store.state.bottomSheetPosition,
+                    bottomSheetPosition: $mapState.bottomSheetPosition,
                     options: [
                         .noDragIndicator,
                         .swipeToDismiss
                     ],
                     headerContent: {
-                        PlaceSheetContentView(place: store.state.selectedMapPlace)
+                        PlaceSheetContentView(place: mapState.selectedPlace)
                     }) {
                 }
             }
-        }.environmentObject(store)
+        }.environmentObject(mapState)
     }
 }
 
 struct AppController_Previews: PreviewProvider {
     static var previews: some View {
-        AppController().environmentObject(AppStore())
+        AppController().environmentObject(MapState())
     }
 }
