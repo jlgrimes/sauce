@@ -10,6 +10,8 @@ struct AppController: View {
             ZStack {
                 TabView {
                     PlacesViewController(viewType: .mapView)
+                        .navigationBarTitle("")
+                            .navigationBarHidden(true)
                         .tabItem {
                             Image(systemName: "mappin.circle")
                             Text("Map")
@@ -35,10 +37,9 @@ struct AppController: View {
                     headerContent: {
                         PlaceSheetContentView(place: store.state.selectedMapPlace)
                     }) {
-                }.navigationBarHidden(true)
+                }
             }
         }.environmentObject(store)
-        .navigationBarHidden(true)
     }
 }
 
