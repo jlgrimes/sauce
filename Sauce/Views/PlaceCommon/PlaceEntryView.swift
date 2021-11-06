@@ -26,7 +26,7 @@ struct PlaceEntryView: View {
             Spacer()
         }
         .padding(.all, 15)
-        .background(.white)
+        .background(Color(UIColor.systemBackground))
         .modifier(CardModifier())
     }
 }
