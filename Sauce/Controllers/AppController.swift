@@ -3,7 +3,7 @@ import MapKit
 import BottomSheet
 
 struct AppController: View {
-    @EnvironmentObject var store: AppStore
+    @StateObject var store: AppStore = AppStore()
     
     var body: some View {
         NavigationView {
@@ -37,7 +37,8 @@ struct AppController: View {
                     }) {
                 }.navigationBarHidden(true)
             }
-        }.navigationBarHidden(true)
+        }.environmentObject(store)
+        .navigationBarHidden(true)
     }
 }
 

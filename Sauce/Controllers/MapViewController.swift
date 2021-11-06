@@ -16,6 +16,7 @@ struct MapViewController: View {
     
     var body: some View {
         MapView(allPlaces: places, region: $region, selectedPlace: $store.state.selectedMapPlace, bottomSheetPosition: $store.state.bottomSheetPosition)
+            .environmentObject(store)
     }
 }
 
