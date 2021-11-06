@@ -28,6 +28,10 @@
 		B309C9672730BC5E008F2937 /* PlaceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C9662730BC5E008F2937 /* PlaceConstants.swift */; };
 		B309C9692730C73B008F2937 /* PlaceEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C9682730C73B008F2937 /* PlaceEntryModel.swift */; };
 		B309C96B2730C950008F2937 /* AllPlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C96A2730C950008F2937 /* AllPlacesModel.swift */; };
+		B309C96D2736D8A1008F2937 /* PlaceSheetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C96C2736D8A1008F2937 /* PlaceSheetContentView.swift */; };
+		B309C9702736DB95008F2937 /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C96F2736DB95008F2937 /* CardModifier.swift */; };
+		B309C9762736DC1F008F2937 /* PlaceEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C9752736DC1F008F2937 /* PlaceEntryView.swift */; };
+		B309C9782736DC28008F2937 /* PlaceEntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C9772736DC28008F2937 /* PlaceEntryListView.swift */; };
 		B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */; };
 		B3154A4B272DD380005BD745 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = B3154A4A272DD380005BD745 /* BottomSheet */; };
 		B3154A4E272DF5FA005BD745 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A4D272DF5FA005BD745 /* MapView.swift */; };
@@ -86,6 +90,10 @@
 		B309C9662730BC5E008F2937 /* PlaceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceConstants.swift; sourceTree = "<group>"; };
 		B309C9682730C73B008F2937 /* PlaceEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEntryModel.swift; sourceTree = "<group>"; };
 		B309C96A2730C950008F2937 /* AllPlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlacesModel.swift; sourceTree = "<group>"; };
+		B309C96C2736D8A1008F2937 /* PlaceSheetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSheetContentView.swift; sourceTree = "<group>"; };
+		B309C96F2736DB95008F2937 /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
+		B309C9752736DC1F008F2937 /* PlaceEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEntryView.swift; sourceTree = "<group>"; };
+		B309C9772736DC28008F2937 /* PlaceEntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEntryListView.swift; sourceTree = "<group>"; };
 		B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
 		B3154A4D272DF5FA005BD745 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B3154A4F272DFDF7005BD745 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -104,8 +112,8 @@
 		B3D687F3272A2C1300DABFD5 /* SauceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceUITests.swift; sourceTree = "<group>"; };
 		B3D687F5272A2C1300DABFD5 /* SauceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3D68808272A404800DABFD5 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
-		B8D0187DFA765E4B4CFA1052 /* PlaceData.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = PlaceData.swift; path = amplify/generated/models/PlaceData.swift; sourceTree = "<group>"; };
-		D8B766D5C5DC5C5E212F64CC /* PlaceData+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "PlaceData+Schema.swift"; path = "amplify/generated/models/PlaceData+Schema.swift"; sourceTree = "<group>"; };
+		B8D0187DFA765E4B4CFA1052 /* PlaceData.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = PlaceData.swift; path = amplify/generated/models/PlaceData.swift; sourceTree = "<group>"; };
+		D8B766D5C5DC5C5E212F64CC /* PlaceData+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "PlaceData+Schema.swift"; path = "amplify/generated/models/PlaceData+Schema.swift"; sourceTree = "<group>"; };
 		F814E54531759257AA0438B9 /* Entry.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Entry.swift; path = amplify/generated/models/Entry.swift; sourceTree = "<group>"; };
 		FB53221879E97CBC22FB0C39 /* MethodOfEat.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = MethodOfEat.swift; path = amplify/generated/models/MethodOfEat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,9 +174,36 @@
 			path = AddPlace;
 			sourceTree = "<group>";
 		};
+		B309C96E2736DB88008F2937 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				B309C96F2736DB95008F2937 /* CardModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		B309C9712736DBC2008F2937 /* PlaceSheet */ = {
+			isa = PBXGroup;
+			children = (
+				B309C952272EFD42008F2937 /* PlaceSheetHeaderView.swift */,
+				B309C96C2736D8A1008F2937 /* PlaceSheetContentView.swift */,
+			);
+			path = PlaceSheet;
+			sourceTree = "<group>";
+		};
+		B309C9742736DC0C008F2937 /* PlaceCommon */ = {
+			isa = PBXGroup;
+			children = (
+				B309C9752736DC1F008F2937 /* PlaceEntryView.swift */,
+				B309C9772736DC28008F2937 /* PlaceEntryListView.swift */,
+			);
+			path = PlaceCommon;
+			sourceTree = "<group>";
+		};
 		B3154A42272DB2FC005BD745 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B309C9742736DC0C008F2937 /* PlaceCommon */,
 				B3154A4C272DF5DC005BD745 /* Map */,
 				B309C939272EDB04008F2937 /* AddPlace */,
 			);
@@ -178,8 +213,8 @@
 		B3154A4C272DF5DC005BD745 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				B309C9712736DBC2008F2937 /* PlaceSheet */,
 				B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */,
-				B309C952272EFD42008F2937 /* PlaceSheetHeaderView.swift */,
 				B3154A4D272DF5FA005BD745 /* MapView.swift */,
 			);
 			path = Map;
@@ -229,6 +264,7 @@
 		B3D687D7272A2C1200DABFD5 /* Sauce */ = {
 			isa = PBXGroup;
 			children = (
+				B309C96E2736DB88008F2937 /* Modifiers */,
 				B3154A5C272E126F005BD745 /* Extensions */,
 				B3154A53272E0025005BD745 /* Constants */,
 				B3154A42272DB2FC005BD745 /* Views */,
@@ -444,10 +480,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B309C9672730BC5E008F2937 /* PlaceConstants.swift in Sources */,
+				B309C9762736DC1F008F2937 /* PlaceEntryView.swift in Sources */,
 				B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */,
 				B3154A52272DFFEE005BD745 /* AddPlaceButtonView.swift in Sources */,
 				B309C953272EFD42008F2937 /* PlaceSheetHeaderView.swift in Sources */,
+				B309C9782736DC28008F2937 /* PlaceEntryListView.swift in Sources */,
 				B309C948272EF722008F2937 /* AppController.swift in Sources */,
+				B309C9702736DB95008F2937 /* CardModifier.swift in Sources */,
 				B3154A50272DFDF7005BD745 /* SampleData.swift in Sources */,
 				B3154A5E272E1279005BD745 /* Color.swift in Sources */,
 				B3154A60272E36A5005BD745 /* AddPlaceView.swift in Sources */,
@@ -467,6 +506,7 @@
 				B309C94F272EF8ED008F2937 /* MapViewController.swift in Sources */,
 				29862D1EC3A5C59567C93C32 /* AmplifyModels.swift in Sources */,
 				93A875EE9C18AF9760FFBC8C /* Entry+Schema.swift in Sources */,
+				B309C96D2736D8A1008F2937 /* PlaceSheetContentView.swift in Sources */,
 				FF3D07FBF3BA0F054EC8A532 /* Entry.swift in Sources */,
 				B309C9692730C73B008F2937 /* PlaceEntryModel.swift in Sources */,
 				DCA95D976CE8C7251A56303B /* MethodOfEat.swift in Sources */,

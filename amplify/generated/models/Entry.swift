@@ -4,6 +4,7 @@ import Foundation
 
 public struct Entry: Model {
   public let id: String
+  public var time: Temporal.DateTime
   public var place: PlaceData
   public var order: String
   public var rating: Int
@@ -15,6 +16,7 @@ public struct Entry: Model {
   public var updatedAt: Temporal.DateTime?
   
   public init(id: String = UUID().uuidString,
+      time: Temporal.DateTime,
       place: PlaceData,
       order: String,
       rating: Int,
@@ -23,6 +25,7 @@ public struct Entry: Model {
       method: MethodOfEat? = nil,
       thoughts: String? = nil) {
     self.init(id: id,
+      time: time,
       place: place,
       order: order,
       rating: rating,
@@ -34,6 +37,7 @@ public struct Entry: Model {
       updatedAt: nil)
   }
   internal init(id: String = UUID().uuidString,
+      time: Temporal.DateTime,
       place: PlaceData,
       order: String,
       rating: Int,
@@ -44,6 +48,7 @@ public struct Entry: Model {
       createdAt: Temporal.DateTime? = nil,
       updatedAt: Temporal.DateTime? = nil) {
       self.id = id
+      self.time = time
       self.place = place
       self.order = order
       self.rating = rating

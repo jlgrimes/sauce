@@ -6,6 +6,7 @@ extension Entry {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
+    case time
     case place
     case order
     case rating
@@ -27,6 +28,7 @@ extension Entry {
     
     model.fields(
       .id(),
+      .field(entry.time, is: .required, ofType: .dateTime),
       .field(entry.place, is: .required, ofType: .embedded(type: PlaceData.self)),
       .field(entry.order, is: .required, ofType: .string),
       .field(entry.rating, is: .required, ofType: .int),

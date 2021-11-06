@@ -19,13 +19,24 @@ var SAMPLE_REGION: MKCoordinateRegion = MKCoordinateRegion(
     )
 )
 
-var SAMPLE_PLACE = Place(placeEntry: PlaceEntry(
+var SAMPLE_PLACE_ENTRY = PlaceEntry(
     order: "Baconeggandcheese",
     rating: 8,
     cuisine: "Cafe",
     price: 2,
     method: .dineIn
-), coordinate: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), name: "Empire State Cafe")
+)
+
+var SAMPLE_PLACE = Place(placeEntries: [
+    SAMPLE_PLACE_ENTRY,
+    PlaceEntry(
+        order: "Diet coke, an orange, couple of hashbrowns, a large milkshake to go",
+        rating: 7,
+        cuisine: "Cafe",
+        price: 2,
+        method: .pickup
+    )
+], coordinate: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), name: "Empire State Cafe")
 
 var SAMPLE_ALL_PLACES: AllPlaces = AllPlaces(places: [
     SAMPLE_PLACE,

@@ -10,6 +10,7 @@ import MapKit
 
 struct PlaceEntry: Identifiable {
     let id: UUID
+    let time: Date
     let order: String
     let rating: Int
     let cuisine: String
@@ -19,6 +20,13 @@ struct PlaceEntry: Identifiable {
     // Init with data, normal usage
     init(entry: Entry) {
         self.id = UUID(uuidString: entry.id)!
+        
+        do {
+            self.time = try Date(entry.time.iso8601String, strategy: .iso8601)
+        } catch {
+            self.time = Date()
+        }
+        
         self.order = entry.order
         self.rating = entry.rating
         self.cuisine = entry.cuisine ?? ""
@@ -29,6 +37,7 @@ struct PlaceEntry: Identifiable {
     // Init with sample data usage
     init(order: String, rating: Int, cuisine: String, price: Int, method: MethodOfEat) {
         self.order = order
+        self.time = Date()
         self.id = UUID()
         self.rating = rating
         self.cuisine = cuisine

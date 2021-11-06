@@ -35,15 +35,14 @@ struct MapView: View {
                 .swipeToDismiss
             ],
             headerContent: {
-                PlaceSheetHeaderView(place: selectedPlace)
+                PlaceSheetContentView(place: selectedPlace)
             }) {
-            Text("hi")
         }.navigationBarHidden(true)
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(allPlaces: SAMPLE_ALL_PLACES, region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_ALL_PLACES.getPlaces()[1]), bottomSheetPosition: .constant(.bottom))
+        MapView(allPlaces: SAMPLE_ALL_PLACES, region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_PLACE), bottomSheetPosition: .constant(.bottom))
     }
 }
