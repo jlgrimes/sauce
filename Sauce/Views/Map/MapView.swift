@@ -28,16 +28,7 @@ struct MapView: View {
                         region.center = selectedPlace.getPlacemark().coordinate
                     }
             }
-        }.bottomSheet(
-            bottomSheetPosition: self.$bottomSheetPosition,
-            options: [
-                .noDragIndicator,
-                .swipeToDismiss
-            ],
-            headerContent: {
-                PlaceSheetContentView(place: selectedPlace)
-            }) {
-        }.navigationBarHidden(true)
+        }
     }
 }
 

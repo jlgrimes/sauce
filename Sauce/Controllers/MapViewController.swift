@@ -12,16 +12,15 @@ import BottomSheet
 struct MapViewController: View {
     let places: AllPlaces = SAMPLE_ALL_PLACES
     @State var region = SAMPLE_REGION
-    @Binding var bottomSheetPosition: BottomSheetPosition
-    @State private var selectedPlace: Place = SAMPLE_PLACE
+    @EnvironmentObject var store: AppStore
     
     var body: some View {
-        MapView(allPlaces: places, region: $region, selectedPlace: $selectedPlace, bottomSheetPosition: $bottomSheetPosition)
+        MapView(allPlaces: places, region: $region, selectedPlace: $store.state.selectedMapPlace, bottomSheetPosition: $store.state.bottomSheetPosition)
     }
 }
 
 struct MapViewController_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewController(bottomSheetPosition: .constant(.bottom))
+        MapViewController().environmentObject(AppStore())
     }
 }

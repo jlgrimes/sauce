@@ -3,6 +3,8 @@ import MapKit
 import BottomSheet
 
 struct AppController: View {
+    @EnvironmentObject var store: AppStore
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,6 +26,16 @@ struct AppController: View {
                         }
                 }
                 .font(.headline)
+                .bottomSheet(
+                    bottomSheetPosition: $store.state.bottomSheetPosition,
+                    options: [
+                        .noDragIndicator,
+                        .swipeToDismiss
+                    ],
+                    headerContent: {
+                        PlaceSheetContentView(place: store.state.selectedMapPlace)
+                    }) {
+                }.navigationBarHidden(true)
             }
         }.navigationBarHidden(true)
     }
@@ -31,6 +43,6 @@ struct AppController: View {
 
 struct AppController_Previews: PreviewProvider {
     static var previews: some View {
-        AppController()
+        AppController().environmentObject(AppStore())
     }
 }

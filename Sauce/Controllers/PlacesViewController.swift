@@ -18,7 +18,7 @@ struct PlacesViewController: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             if (viewType == .mapView) {
-                MapViewController(bottomSheetPosition: $bottomSheetPosition)
+                MapViewController()
             }
             
             if bottomSheetPosition == .hidden {

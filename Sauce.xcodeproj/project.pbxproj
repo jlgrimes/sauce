@@ -32,6 +32,8 @@
 		B309C9702736DB95008F2937 /* CardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C96F2736DB95008F2937 /* CardModifier.swift */; };
 		B309C9762736DC1F008F2937 /* PlaceEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C9752736DC1F008F2937 /* PlaceEntryView.swift */; };
 		B309C9782736DC28008F2937 /* PlaceEntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C9772736DC28008F2937 /* PlaceEntryListView.swift */; };
+		B309C97B2736F3A5008F2937 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C97A2736F3A5008F2937 /* AppState.swift */; };
+		B309C97D2736F46E008F2937 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309C97C2736F46E008F2937 /* Store.swift */; };
 		B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */; };
 		B3154A4B272DD380005BD745 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = B3154A4A272DD380005BD745 /* BottomSheet */; };
 		B3154A4E272DF5FA005BD745 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3154A4D272DF5FA005BD745 /* MapView.swift */; };
@@ -94,6 +96,8 @@
 		B309C96F2736DB95008F2937 /* CardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModifier.swift; sourceTree = "<group>"; };
 		B309C9752736DC1F008F2937 /* PlaceEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEntryView.swift; sourceTree = "<group>"; };
 		B309C9772736DC28008F2937 /* PlaceEntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEntryListView.swift; sourceTree = "<group>"; };
+		B309C97A2736F3A5008F2937 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B309C97C2736F46E008F2937 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B3154A47272DC40F005BD745 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
 		B3154A4D272DF5FA005BD745 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B3154A4F272DFDF7005BD745 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -200,6 +204,15 @@
 			path = PlaceCommon;
 			sourceTree = "<group>";
 		};
+		B309C9792736F39A008F2937 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B309C97A2736F3A5008F2937 /* AppState.swift */,
+				B309C97C2736F46E008F2937 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		B3154A42272DB2FC005BD745 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +277,7 @@
 		B3D687D7272A2C1200DABFD5 /* Sauce */ = {
 			isa = PBXGroup;
 			children = (
+				B309C9792736F39A008F2937 /* Store */,
 				B309C96E2736DB88008F2937 /* Modifiers */,
 				B3154A5C272E126F005BD745 /* Extensions */,
 				B3154A53272E0025005BD745 /* Constants */,
@@ -479,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B309C97D2736F46E008F2937 /* Store.swift in Sources */,
 				B309C9672730BC5E008F2937 /* PlaceConstants.swift in Sources */,
 				B309C9762736DC1F008F2937 /* PlaceEntryView.swift in Sources */,
 				B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */,
@@ -506,6 +521,7 @@
 				B309C94F272EF8ED008F2937 /* MapViewController.swift in Sources */,
 				29862D1EC3A5C59567C93C32 /* AmplifyModels.swift in Sources */,
 				93A875EE9C18AF9760FFBC8C /* Entry+Schema.swift in Sources */,
+				B309C97B2736F3A5008F2937 /* AppState.swift in Sources */,
 				B309C96D2736D8A1008F2937 /* PlaceSheetContentView.swift in Sources */,
 				FF3D07FBF3BA0F054EC8A532 /* Entry.swift in Sources */,
 				B309C9692730C73B008F2937 /* PlaceEntryModel.swift in Sources */,
