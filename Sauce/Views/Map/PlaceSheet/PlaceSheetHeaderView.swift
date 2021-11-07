@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct PlaceSheetHeaderView: View {
     var place: Place
@@ -24,6 +25,11 @@ struct PlaceSheetHeaderView: View {
             HStack {
                 Text(place.getCuisineTypes())
                 Text(String(repeating: "$", count: place.getAveragePrice()))
+            }
+            Button(action: {
+                place.getMapItem().openInMaps()
+            }) {
+                Text("Get directions")
             }
         }
     }
