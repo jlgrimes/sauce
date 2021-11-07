@@ -12,8 +12,13 @@ import Amplify
 struct AddPlaceController: View {
     @State var selectedPlace: MKMapItem?
     
+    // Used for going back in parent
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     func onSubmit(date: Date, price: Int, methodOfEat: MethodOfEat, cuisineType: String, order: String, rating: Float, otherThoughts: String) {
         do {
+            presentationMode.wrappedValue.dismiss()
+            
             let coordinate: [Double?] = [
                 selectedPlace?.placemark.coordinate.latitude,
                 selectedPlace?.placemark.coordinate.longitude

@@ -32,12 +32,14 @@ class AllPlaces {
             
             // If the coordinate is the same as a place already stored
             let existingPlaceIndex = acc.firstIndex(where: {
-                $0.getPlacemark().coordinate.latitude == currCoordinate.latitude && $0.getPlacemark().coordinate.latitude == currCoordinate.longitude
+                $0.getPlacemark().coordinate.latitude == currCoordinate.latitude && $0.getPlacemark().coordinate.longitude == currCoordinate.longitude
             })
             
             if (existingPlaceIndex == nil) {
+                print("new place")
                 return acc + [ Place(placeEntry: placeEntry, coordinate: currCoordinate, name: curr.place.name) ]
             } else {
+                print("old place")
                 acc[existingPlaceIndex!].addPlace(placeEntry: placeEntry)
                 return acc
             }
