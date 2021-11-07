@@ -11,6 +11,7 @@ import Amplify
 
 struct AddPlaceController: View {
     @State var selectedPlace: MKMapItem?
+    @EnvironmentObject var placeState: PlaceState
     
     // Used for going back in parent
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -29,6 +30,7 @@ struct AddPlaceController: View {
             Amplify.DataStore.save(item) { result in
                        switch(result) {
                        case .success(let savedItem):
+                           placeState.fetchPlaces()
                            print("Saved item: \(savedItem.id)")
                        case .failure(let error):
                            print("Could not save item to DataStore: \(error)")
@@ -58,7 +60,7 @@ struct AddPlaceController: View {
 struct AddPlaceController_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AddPlaceController()
+            AddPlaceController().environmentObject(PlaceState())
         }
     }
 }
