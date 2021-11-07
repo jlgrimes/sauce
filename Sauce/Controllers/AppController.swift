@@ -1,9 +1,28 @@
 import SwiftUI
 import MapKit
 import BottomSheet
+import Amplify
 
 struct AppController: View {
     @StateObject var mapState: MapState = MapState()
+    @StateObject var placeState: PlaceState = PlaceState()
+    
+    func performOnAppear() {
+        Amplify.DataStore.query(Entry.self) { result in
+            switch(result) {
+            case .success(let places):
+                placeState.loadPlaces(response: places)
+                for places in places {
+                    print("==== Place ====")
+                    print("ID: \(places.id)")
+                    print("Name: \(places.place.name)")
+                    print("Order: \(places.order)")
+                }
+            case .failure(let error):
+                print("Could not query DataStore: \(error)")
+            }
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -39,7 +58,12 @@ struct AppController: View {
                     }) {
                 }
             }
-        }.environmentObject(mapState)
+        }
+            .environmentObject(mapState)
+            .environmentObject(placeState)
+            .onAppear {
+                performOnAppear()
+            }
     }
 }
 

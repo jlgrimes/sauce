@@ -10,18 +10,21 @@ import MapKit
 import BottomSheet
 
 struct MapViewController: View {
-    let places: AllPlaces = SAMPLE_ALL_PLACES
     @State var region = SAMPLE_REGION
     @EnvironmentObject var mapState: MapState
+    @EnvironmentObject var placeState: PlaceState
     
     var body: some View {
-        MapView(allPlaces: places, region: $region, selectedPlace: $mapState.selectedPlace, bottomSheetPosition: $mapState.bottomSheetPosition)
+        MapView(allPlaces: placeState.allPlaces, region: $region, selectedPlace: $mapState.selectedPlace, bottomSheetPosition: $mapState.bottomSheetPosition)
             .environmentObject(mapState)
+            .environmentObject(placeState)
     }
 }
 
 struct MapViewController_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewController().environmentObject(MapState())
+        MapViewController()
+            .environmentObject(MapState())
+            .environmentObject(PlaceState())
     }
 }
