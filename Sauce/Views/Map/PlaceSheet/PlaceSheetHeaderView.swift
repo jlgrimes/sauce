@@ -29,7 +29,7 @@ struct PlaceSheetHeaderView: View {
             Button(action: {
                 place.getMapItem().openInMaps()
             }) {
-                Text("Get directions")
+                Text(GET_DIRECTIONS)
             }
         }
     }

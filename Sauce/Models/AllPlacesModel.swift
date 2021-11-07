@@ -36,10 +36,8 @@ class AllPlaces {
             })
             
             if (existingPlaceIndex == nil) {
-                print("new place")
                 return acc + [ Place(placeEntry: placeEntry, coordinate: currCoordinate, name: curr.place.name) ]
             } else {
-                print("old place")
                 acc[existingPlaceIndex!].addPlace(placeEntry: placeEntry)
                 return acc
             }

@@ -48,7 +48,7 @@ class Place: Identifiable {
     }
     
     func getMapItem() -> MKMapItem {
-        var mapItem = MKMapItem(placemark: placemark)
+        let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = name
         return mapItem
     }

@@ -20,8 +20,8 @@ struct AddPlaceView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Visit information")) {
-                DatePicker("Date", selection: $date)
+            Section(header: Text(VISIT_INFORMATION_SECTION_LABEL)) {
+                DatePicker(DATE_PICKER_LABEL, selection: $date)
                 
                 Picker("", selection: $price) {
                     ForEach([1, 2, 3, 4], id: \.self) {
@@ -31,7 +31,7 @@ struct AddPlaceView: View {
                 .labelsHidden()
                 .pickerStyle(.segmented)
 
-                Picker("Method of Eat", selection: $methodOfEat) {
+                Picker(METHOD_OF_EAT_PICKER_LABEL, selection: $methodOfEat) {
                     ForEach([MethodOfEat.dineIn, MethodOfEat.eatAt, MethodOfEat.pickup, MethodOfEat.delivery], id: \.self) {
                         Text(METHOD_OF_EAT_PICKER_OPTIONS[$0]).tag($0)
                     }
@@ -40,8 +40,8 @@ struct AddPlaceView: View {
                 .pickerStyle(.segmented)
                 
                 HStack(spacing: 80) {
-                    Text("Cuisine type")
-                    Picker("Type of Food", selection: $cuisineType) {
+                    Text(CUISINE_TYPE_PICKER_LABEL)
+                    Picker("", selection: $cuisineType) {
                         ForEach(["American", "Mexican", "Boba", "Sushi", "Pizza", "Italian", "Cuban"], id: \.self) {
                             Text($0)
                         }
@@ -50,11 +50,11 @@ struct AddPlaceView: View {
                 }
             }
             
-            Section(header: Text("Order")) {
+            Section(header: Text(ORDER_SECTION_LABEL)) {
                 TextEditor(text: $order)
                 
                 VStack {
-                    Text("Rating")
+                    Text(RATING_SLIDER_LABEL)
                     HStack {
                         PlaceAnnotationView(rating: rating, hideFeatures: true).padding(.trailing)
                         Slider(
@@ -66,7 +66,7 @@ struct AddPlaceView: View {
                 }
             }
             
-            Section(header: Text("Other thoughts")) {
+            Section(header: Text(THOUGHTS_FIELD_LABEL)) {
                 TextEditor(text: $otherThoughts)
             }
             
@@ -77,10 +77,10 @@ struct AddPlaceView: View {
                     }
                     
                 }) {
-                    Text("Add new place")
+                    Text(ADD_PLACE_BUTTON_LABEL)
                 }
             }
-        }.navigationBarTitle("Add new place")
+        }.navigationBarTitle(ADD_PLACE_VIEW_NAVIGATION_TITLE)
     }
 }
 

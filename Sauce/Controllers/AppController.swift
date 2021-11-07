@@ -19,12 +19,12 @@ struct AppController: View {
                             .navigationBarHidden(true)
                         .tabItem {
                             Image(systemName: "mappin.circle")
-                            Text("Map")
+                            Text(MAP_TAB)
                         }
                     Text("Another Tab")
                         .tabItem {
                             Image(systemName: "list.bullet")
-                            Text("List")
+                            Text(LIST_TAB)
                         }
                     Text("The Last Tab")
                         .tabItem {

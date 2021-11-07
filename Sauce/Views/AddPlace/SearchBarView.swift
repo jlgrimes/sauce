@@ -13,7 +13,7 @@ struct SearchBarView: View {
     
     var body: some View {
         TextField(
-            "Search for a place",
+            PLACE_SEARCH_BAR_LABEL,
             text: $value
         ).padding().onChange(of: value, perform: { newValue in
             onChange(newValue)

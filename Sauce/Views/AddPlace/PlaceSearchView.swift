@@ -35,7 +35,7 @@ struct PlaceSearchView: View {
             })
             List {
                 if initialState == false && resultsLoading == false && value != "" && (places == nil) {
-                    Text("No results found :(")
+                    Text(NO_RESULTS_FOUND_TEXT)
                 }
                 
                 if resultsLoading == true {
