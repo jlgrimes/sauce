@@ -43,6 +43,8 @@
 		B3659754273711EF008F95DD /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659753273711EF008F95DD /* MapState.swift */; };
 		B3659756273712EF008F95DD /* PlaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659755273712EF008F95DD /* PlaceState.swift */; };
 		B36597582738214C008F95DD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36597572738214C008F95DD /* Strings.swift */; };
+		B365975E273A1E17008F95DD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365975D273A1E17008F95DD /* LoginController.swift */; };
+		B3659761273A2448008F95DD /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659760273A2448008F95DD /* AuthState.swift */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -107,6 +109,9 @@
 		B3659753273711EF008F95DD /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
 		B3659755273712EF008F95DD /* PlaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceState.swift; sourceTree = "<group>"; };
 		B36597572738214C008F95DD /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		B365975D273A1E17008F95DD /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B365975F273A23A8008F95DD /* Sauce.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sauce.entitlements; sourceTree = "<group>"; };
+		B3659760273A2448008F95DD /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
 		B3D687DA272A2C1200DABFD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 			children = (
 				B3659753273711EF008F95DD /* MapState.swift */,
 				B3659755273712EF008F95DD /* PlaceState.swift */,
+				B3659760273A2448008F95DD /* AuthState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 		B3D687D7272A2C1200DABFD5 /* Sauce */ = {
 			isa = PBXGroup;
 			children = (
+				B365975F273A23A8008F95DD /* Sauce.entitlements */,
 				B309C9792736F39A008F2937 /* State */,
 				B309C96E2736DB88008F2937 /* Modifiers */,
 				B3154A5C272E126F005BD745 /* Extensions */,
@@ -328,6 +335,7 @@
 				B309C947272EF722008F2937 /* AppController.swift */,
 				B309C94E272EF8ED008F2937 /* MapViewController.swift */,
 				B309C956272F09C5008F2937 /* AddPlaceController.swift */,
+				B365975D273A1E17008F95DD /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -499,6 +507,7 @@
 				B3659754273711EF008F95DD /* MapState.swift in Sources */,
 				B309C9672730BC5E008F2937 /* PlaceConstants.swift in Sources */,
 				B309C9762736DC1F008F2937 /* PlaceEntryView.swift in Sources */,
+				B3659761273A2448008F95DD /* AuthState.swift in Sources */,
 				B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */,
 				B3154A52272DFFEE005BD745 /* AddPlaceButtonView.swift in Sources */,
 				B309C953272EFD42008F2937 /* PlaceSheetHeaderView.swift in Sources */,
@@ -530,6 +539,7 @@
 				B309C9692730C73B008F2937 /* PlaceEntryModel.swift in Sources */,
 				DCA95D976CE8C7251A56303B /* MethodOfEat.swift in Sources */,
 				F6D0880DA2EC20316912EC7E /* PlaceData+Schema.swift in Sources */,
+				B365975E273A1E17008F95DD /* LoginController.swift in Sources */,
 				B3659756273712EF008F95DD /* PlaceState.swift in Sources */,
 				BAF8F155BDE944767678DC82 /* PlaceData.swift in Sources */,
 			);
@@ -689,6 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sauce/Sauce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sauce/Preview Content\"";
@@ -718,6 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sauce/Sauce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sauce/Preview Content\"";

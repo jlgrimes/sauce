@@ -9,14 +9,17 @@ import SwiftUI
 import Amplify
 import AWSDataStorePlugin
 import AWSAPIPlugin
+import AWSCognitoAuthPlugin
 
 func configureAmplify() {
     let models = AmplifyModels()
     let apiPlugin = AWSAPIPlugin(modelRegistration: models)
     let dataStorePlugin = AWSDataStorePlugin(modelRegistration: models)
+    // let authPlugin = AWSCognitoAuthPlugin()
     do {
         try Amplify.add(plugin: apiPlugin)
         try Amplify.add(plugin: dataStorePlugin)
+        // try Amplify.add(plugin: authPlugin)
         try Amplify.configure()
         print("Initialized Amplify");
     } catch {
