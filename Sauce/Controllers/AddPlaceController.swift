@@ -12,6 +12,7 @@ import Amplify
 struct AddPlaceController: View {
     @State var selectedPlace: MKMapItem?
     @EnvironmentObject var placeState: PlaceState
+    @EnvironmentObject var authState: AuthState
     
     // Used for going back in parent
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -25,12 +26,12 @@ struct AddPlaceController: View {
                 selectedPlace?.placemark.coordinate.longitude
             ]
             let placeData = PlaceData(coordinate: coordinate, name: selectedPlace?.name ?? "")
-            let item = Entry(id: UUID().uuidString, userID: "jeff", time: try Temporal.DateTime(iso8601String: date.ISO8601Format()), place: placeData, order: order, rating: Int(rating), cuisine: cuisineType, price: price, method: methodOfEat, thoughts: otherThoughts)
+            let item = Entry(id: UUID().uuidString, userID: authState.getUserId(), time: try Temporal.DateTime(iso8601String: date.ISO8601Format()), place: placeData, order: order, rating: Int(rating), cuisine: cuisineType, price: price, method: methodOfEat, thoughts: otherThoughts)
             
             Amplify.DataStore.save(item) { result in
                        switch(result) {
                        case .success(let savedItem):
-                           placeState.fetchPlaces()
+                           placeState.fetchPlaces(userId: authState.getUserId())
                            print("Saved item: \(savedItem.id)")
                        case .failure(let error):
                            print("Could not save item to DataStore: \(error)")

@@ -15,8 +15,8 @@ final class PlaceState: ObservableObject {
         allPlaces = AllPlaces()
     }
 
-    func fetchPlaces() {
-        Amplify.DataStore.query(Entry.self) { result in
+    func fetchPlaces(userId: String) {
+        Amplify.DataStore.query(Entry.self, where: Entry.keys.userID.eq(userId)) { result in
             switch(result) {
             case .success(let places):
                 allPlaces.loadPlaces(entries: places)

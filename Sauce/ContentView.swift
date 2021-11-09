@@ -12,6 +12,10 @@ import Amplify
 struct ContentView: View {
     @State var todoSubscription: AnyCancellable?
     
+    @StateObject var mapState: MapState = MapState()
+    @StateObject var placeState: PlaceState = PlaceState()
+    @StateObject var authState: AuthState = AuthState()
+    
     func subscribeEntries() {
         self.todoSubscription
             = Amplify.DataStore.publisher(for: Entry.self)
@@ -45,7 +49,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        AppController()
+        if !authState.isLoggedIn() {
+            LoginController()
+                .environmentObject(authState)
+        } else {
+            AppController()
+                .environmentObject(mapState)
+                .environmentObject(placeState)
+                .environmentObject(authState)
+        }
     }
 }
 
