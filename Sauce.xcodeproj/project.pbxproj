@@ -45,6 +45,7 @@
 		B36597582738214C008F95DD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36597572738214C008F95DD /* Strings.swift */; };
 		B365975E273A1E17008F95DD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365975D273A1E17008F95DD /* LoginController.swift */; };
 		B3659761273A2448008F95DD /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659760273A2448008F95DD /* AuthState.swift */; };
+		B3659765273C899C008F95DD /* AddPlaceStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659764273C899C008F95DD /* AddPlaceStateModel.swift */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		B365975D273A1E17008F95DD /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B365975F273A23A8008F95DD /* Sauce.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sauce.entitlements; sourceTree = "<group>"; };
 		B3659760273A2448008F95DD /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		B3659764273C899C008F95DD /* AddPlaceStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceStateModel.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
 		B3D687DA272A2C1200DABFD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				B3D68808272A404800DABFD5 /* PlaceModel.swift */,
 				B309C9682730C73B008F2937 /* PlaceEntryModel.swift */,
 				B309C96A2730C950008F2937 /* AllPlacesModel.swift */,
+				B3659764273C899C008F95DD /* AddPlaceStateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				B309C951272EF9A5008F2937 /* PlacesViewController.swift in Sources */,
 				B309C96B2730C950008F2937 /* AllPlacesModel.swift in Sources */,
 				B309C94F272EF8ED008F2937 /* MapViewController.swift in Sources */,
+				B3659765273C899C008F95DD /* AddPlaceStateModel.swift in Sources */,
 				29862D1EC3A5C59567C93C32 /* AmplifyModels.swift in Sources */,
 				93A875EE9C18AF9760FFBC8C /* Entry+Schema.swift in Sources */,
 				B309C96D2736D8A1008F2937 /* PlaceSheetContentView.swift in Sources */,

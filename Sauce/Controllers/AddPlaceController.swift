@@ -10,23 +10,27 @@ import MapKit
 import Amplify
 
 struct AddPlaceController: View {
-    @State var selectedPlace: MKMapItem?
+    @State var addPlaceState: AddPlaceState = AddPlaceState()
     @EnvironmentObject var placeState: PlaceState
     @EnvironmentObject var authState: AuthState
     
     // Used for going back in parent
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    func onSubmit(date: Date, price: Int, methodOfEat: MethodOfEat, cuisineType: [String], order: String, rating: Float, otherThoughts: String) {
+    func onSubmit(state: AddPlaceState) {
+        if !addPlaceState.validateState() {
+            return;
+        }
+        
         do {
             presentationMode.wrappedValue.dismiss()
             
             let coordinate: [Double?] = [
-                selectedPlace?.placemark.coordinate.latitude,
-                selectedPlace?.placemark.coordinate.longitude
+                addPlaceState.selectedPlace?.placemark.coordinate.latitude,
+                addPlaceState.selectedPlace?.placemark.coordinate.longitude
             ]
-            let placeData = PlaceData(coordinate: coordinate, name: selectedPlace?.name ?? "")
-            let item = Entry(id: UUID().uuidString, userID: authState.getUserId(), time: try Temporal.DateTime(iso8601String: date.ISO8601Format()), place: placeData, order: order, rating: Int(rating), cuisine: cuisineType, price: price, method: methodOfEat, thoughts: otherThoughts)
+            let placeData = PlaceData(coordinate: coordinate, name: (addPlaceState.selectedPlace?.name)!)
+            let item = Entry(id: UUID().uuidString, userID: authState.getUserId(), time: try Temporal.DateTime(iso8601String: state.date.ISO8601Format()), place: placeData, order: addPlaceState.order, rating: Int(addPlaceState.rating), cuisine: addPlaceState.cuisineType.components(separatedBy: ","), price: addPlaceState.price, method: addPlaceState.methodOfEat, thoughts: addPlaceState.otherThoughts)
             
             Amplify.DataStore.save(item) { result in
                        switch(result) {
@@ -45,15 +49,15 @@ struct AddPlaceController: View {
     var body: some View {
         VStack {
             NavigationLink(destination: PlaceSearchController(onSelect: { place in
-                    selectedPlace = place
+                addPlaceState.setSelectedPlace(place: place)
             }).navigationBarTitle("Search")) {
-                if (selectedPlace == nil) {
+                if (addPlaceState.selectedPlace == nil) {
                     SearchBarView(value: .constant(""), onChange: void)
                 } else {
-                    PlaceShortDisplayView(place: selectedPlace).allowsHitTesting(false)
+                    PlaceShortDisplayView(place: addPlaceState.selectedPlace).allowsHitTesting(false)
                 }
             }
-            AddPlaceView(onSubmit: self.onSubmit)
+            AddPlaceView(state: $addPlaceState, onSubmit: self.onSubmit)
         }
     }
 }
