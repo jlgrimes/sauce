@@ -18,7 +18,7 @@ struct PlaceEntryView: View {
             VStack(alignment: .leading, spacing: 2) {
                 HStack {
                     Text(placeEntry.time, style: .date).font(.caption)
-                    Text(placeEntry.method.rawValue).font(.caption)
+                    Text(placeEntry.method?.rawValue).font(.caption)
                 }
                 Text(placeEntry.order)
             }

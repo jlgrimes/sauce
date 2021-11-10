@@ -28,6 +28,10 @@ class AllPlaces {
             // Initialize place entry object
             let placeEntry = PlaceEntry(entry: curr)
             
+            if curr.place.coordinate[0] == nil || curr.place.coordinate[1] == nil {
+                return acc
+            }
+            
             let currCoordinate = CLLocationCoordinate2D(latitude: curr.place.coordinate[0]!, longitude: curr.place.coordinate[1]!)
             
             // If the coordinate is the same as a place already stored

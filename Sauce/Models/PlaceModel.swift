@@ -35,12 +35,8 @@ class Place: Identifiable {
         return Float(placeEntries.reduce(0, { $0 + $1.rating })) / Float(placeEntries.count)
     }
     
-    func getCuisineTypes() -> String {
-        return Array(Set(placeEntries.map({ $0.cuisine }))).joined(separator: ", ")
-    }
-    
     func getAveragePrice() -> Int {
-        return placeEntries.reduce(0, { $0 + $1.price }) / placeEntries.count
+        return placeEntries.reduce(0, { $0 + $1.price! }) / placeEntries.count
     }
     
     func getPlacemark() -> MKPlacemark {

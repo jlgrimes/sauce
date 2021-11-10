@@ -34,7 +34,7 @@ extension Entry {
       .field(entry.place, is: .required, ofType: .embedded(type: PlaceData.self)),
       .field(entry.order, is: .required, ofType: .string),
       .field(entry.rating, is: .required, ofType: .int),
-      .field(entry.cuisine, is: .optional, ofType: .string),
+      .field(entry.cuisine, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .field(entry.price, is: .optional, ofType: .int),
       .field(entry.method, is: .optional, ofType: .enum(type: MethodOfEat.self)),
       .field(entry.thoughts, is: .optional, ofType: .string),

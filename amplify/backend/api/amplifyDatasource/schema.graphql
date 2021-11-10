@@ -17,7 +17,7 @@ type Entry @model {
   place: PlaceData!
   order: String!
   rating: Int!
-  cuisine: String
+  cuisine: [String]
   price: Int
   method: MethodOfEat
   thoughts: String

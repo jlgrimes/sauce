@@ -22,7 +22,7 @@ var SAMPLE_REGION: MKCoordinateRegion = MKCoordinateRegion(
 var SAMPLE_PLACE_ENTRY = PlaceEntry(
     order: "Baconeggandcheese",
     rating: 8,
-    cuisine: "Cafe",
+    cuisine: ["Cafe"],
     price: 2,
     method: .dineIn
 )
@@ -32,7 +32,7 @@ var SAMPLE_PLACE = Place(placeEntries: [
     PlaceEntry(
         order: "Diet coke, an orange, couple of hashbrowns, a large milkshake to go",
         rating: 7,
-        cuisine: "Cafe",
+        cuisine: ["Cafe"],
         price: 2,
         method: .pickup
     )
@@ -44,14 +44,14 @@ var SAMPLE_ALL_PLACES: AllPlaces = AllPlaces(places: [
         PlaceEntry(
             order: "Gold plated burger, side of fries",
             rating: 8,
-            cuisine: "American",
+            cuisine: ["American"],
             price: 3,
             method: .dineIn
         ),
         PlaceEntry(
             order: "1 Diet Coke",
             rating: 9,
-            cuisine: "American",
+            cuisine: ["American"],
             price: 1,
             method: .dineIn
         )

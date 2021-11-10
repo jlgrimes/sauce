@@ -16,7 +16,7 @@ struct AddPlaceView: View {
     @State var order: String = ""
     @State var rating: Float = 5.0
     @State var otherThoughts: String = ""
-    var onSubmit: ((Date, Int, MethodOfEat, String, String, Float, String) -> Void)?
+    var onSubmit: ((Date, Int, MethodOfEat, [String], String, Float, String) -> Void)?
 
     var body: some View {
         Form {
@@ -41,12 +41,10 @@ struct AddPlaceView: View {
                 
                 HStack(spacing: 80) {
                     Text(CUISINE_TYPE_PICKER_LABEL)
-                    Picker("", selection: $cuisineType) {
-                        ForEach(["American", "Mexican", "Boba", "Sushi", "Pizza", "Italian", "Cuban"], id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(.menu)
+                    TextField(
+                        "Cuisine type (separate with comma)",
+                        text: $cuisineType
+                    )
                 }
             }
             
@@ -73,7 +71,7 @@ struct AddPlaceView: View {
             Section() {
                 Button(action: {
                     if self.onSubmit != nil {
-                        self.onSubmit!(date, price, methodOfEat, cuisineType, order, rating, otherThoughts)
+                        self.onSubmit!(date, price, methodOfEat, cuisineType.components(separatedBy: ","), order, rating, otherThoughts)
                     }
                     
                 }) {

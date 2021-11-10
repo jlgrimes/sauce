@@ -9,7 +9,7 @@ public struct Entry: Model {
   public var place: PlaceData
   public var order: String
   public var rating: Int
-  public var cuisine: String?
+  public var cuisine: [String?]?
   public var price: Int?
   public var method: MethodOfEat?
   public var thoughts: String?
@@ -22,7 +22,7 @@ public struct Entry: Model {
       place: PlaceData,
       order: String,
       rating: Int,
-      cuisine: String? = nil,
+      cuisine: [String?]? = nil,
       price: Int? = nil,
       method: MethodOfEat? = nil,
       thoughts: String? = nil) {
@@ -45,7 +45,7 @@ public struct Entry: Model {
       place: PlaceData,
       order: String,
       rating: Int,
-      cuisine: String? = nil,
+      cuisine: [String?]? = nil,
       price: Int? = nil,
       method: MethodOfEat? = nil,
       thoughts: String? = nil,

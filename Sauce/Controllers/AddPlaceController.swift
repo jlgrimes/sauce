@@ -17,7 +17,7 @@ struct AddPlaceController: View {
     // Used for going back in parent
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    func onSubmit(date: Date, price: Int, methodOfEat: MethodOfEat, cuisineType: String, order: String, rating: Float, otherThoughts: String) {
+    func onSubmit(date: Date, price: Int, methodOfEat: MethodOfEat, cuisineType: [String], order: String, rating: Float, otherThoughts: String) {
         do {
             presentationMode.wrappedValue.dismiss()
             

@@ -23,7 +23,7 @@ struct PlaceSheetHeaderView: View {
                 PlaceAnnotationView(rating: place.getAverageRating(), hideFeatures: true)
             }
             HStack {
-                Text(place.getCuisineTypes())
+                // Text(place.getCuisineTypes())
                 Text(String(repeating: "$", count: place.getAveragePrice()))
             }
             Button(action: {
