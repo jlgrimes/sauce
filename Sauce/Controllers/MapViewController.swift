@@ -11,11 +11,15 @@ import BottomSheet
 import CoreLocation
 
 struct MapViewController: View {
-    @State var region = SAMPLE_REGION
+    let locationManager = CLLocationManager()
+    
+    @State var region: MKCoordinateRegion
     @EnvironmentObject var mapState: MapState
     @EnvironmentObject var placeState: PlaceState
     
-    let locationManager = CLLocationManager()
+    init() {
+        region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+    }
     
     var body: some View {
         MapView(allPlaces: placeState.allPlaces, region: $region, selectedPlace: $mapState.selectedPlace, bottomSheetPosition: $mapState.bottomSheetPosition)
