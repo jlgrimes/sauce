@@ -16,7 +16,7 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $region,
-            annotationItems: allPlaces.getPlaces()
+            showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: allPlaces.getPlaces()
         ) { place in
             MapAnnotation(coordinate: place.getPlacemark().coordinate) {
                 PlaceAnnotationView(

@@ -48,6 +48,7 @@
 		B3659765273C899C008F95DD /* AddPlaceStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659764273C899C008F95DD /* AddPlaceStateModel.swift */; };
 		B3659767273C968E008F95DD /* ErrorFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659766273C968E008F95DD /* ErrorFieldModifier.swift */; };
 		B3659769273C97B0008F95DD /* If.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659768273C97B0008F95DD /* If.swift */; };
+		B365976B273CAF4A008F95DD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365976A273CAF4A008F95DD /* LocationManager.swift */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		B3659764273C899C008F95DD /* AddPlaceStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceStateModel.swift; sourceTree = "<group>"; };
 		B3659766273C968E008F95DD /* ErrorFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFieldModifier.swift; sourceTree = "<group>"; };
 		B3659768273C97B0008F95DD /* If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = If.swift; sourceTree = "<group>"; };
+		B365976A273CAF4A008F95DD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
 		B3D687DA272A2C1200DABFD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				B309C94E272EF8ED008F2937 /* MapViewController.swift */,
 				B309C956272F09C5008F2937 /* AddPlaceController.swift */,
 				B365975D273A1E17008F95DD /* LoginController.swift */,
+				B365976A273CAF4A008F95DD /* LocationManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				B309C9692730C73B008F2937 /* PlaceEntryModel.swift in Sources */,
 				DCA95D976CE8C7251A56303B /* MethodOfEat.swift in Sources */,
 				F6D0880DA2EC20316912EC7E /* PlaceData+Schema.swift in Sources */,
+				B365976B273CAF4A008F95DD /* LocationManager.swift in Sources */,
 				B365975E273A1E17008F95DD /* LoginController.swift in Sources */,
 				B3659756273712EF008F95DD /* PlaceState.swift in Sources */,
 				BAF8F155BDE944767678DC82 /* PlaceData.swift in Sources */,
@@ -718,6 +722,7 @@
 				DEVELOPMENT_TEAM = MR26CCZ496;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Get how close you are to your favorite foods";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -748,6 +753,7 @@
 				DEVELOPMENT_TEAM = MR26CCZ496;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Get how close you are to your favorite foods";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
