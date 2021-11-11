@@ -19,12 +19,9 @@ struct PlaceSheetHeaderView: View {
                     .bold()
                     // Allows text overflow to happen
                     .fixedSize(horizontal: false, vertical: true)
+                Text(String(repeating: "$", count: place.getAveragePrice()))
                 Spacer()
                 PlaceAnnotationView(rating: place.getAverageRating(), hideFeatures: true)
-            }
-            HStack {
-                // Text(place.getCuisineTypes())
-                Text(String(repeating: "$", count: place.getAveragePrice()))
             }
             Button(action: {
                 place.getMapItem().openInMaps()
