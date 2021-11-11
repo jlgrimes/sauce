@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import Amplify
+import AuthenticationServices
 
 struct ContentView: View {
     @State var todoSubscription: AnyCancellable?
@@ -46,17 +47,38 @@ struct ContentView: View {
     
     func performOnAppear() {
         subscribeEntries()
+        
+        let localUsername: String? = authState.retrieveLocalUsername()
+        
+        if (localUsername != nil) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            appleIDProvider.getCredentialState(forUserID: localUsername!) { (credentialState, error) in
+                switch credentialState {
+                case .authorized:
+                    authState.setAuth(username: localUsername!)
+                    break // The Apple ID credential is valid.
+                case .revoked, .notFound:
+                    break;
+                default:
+                    break
+                }
+            }
+        }
     }
     
     var body: some View {
-        if !authState.isLoggedIn() {
-            LoginController()
-                .environmentObject(authState)
-        } else {
-            AppController()
-                .environmentObject(mapState)
-                .environmentObject(placeState)
-                .environmentObject(authState)
+        ZStack {
+            if !authState.isLoggedIn() {
+                LoginController()
+                    .environmentObject(authState)
+            } else {
+                AppController()
+                    .environmentObject(mapState)
+                    .environmentObject(placeState)
+                    .environmentObject(authState)
+            }
+        }.onAppear {
+            performOnAppear()
         }
     }
 }
