@@ -14,11 +14,41 @@ struct AddPlaceController: View {
     @EnvironmentObject var placeState: PlaceState
     @EnvironmentObject var authState: AuthState
     
+    @State var invalidPlace: Bool = false
+    @State var invalidCuisineType: Bool = false
+    @State var invalidOrder: Bool = false
+    
     // Used for going back in parent
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    func validateAddPlaceState(state: AddPlaceState) -> Bool {
+        if addPlaceState.selectedPlace == nil {
+            invalidPlace = true
+        } else {
+            invalidPlace = false
+        }
+        
+        if addPlaceState.cuisineType == "" {
+            invalidCuisineType = true
+        } else {
+            invalidCuisineType = false
+        }
+        
+        if addPlaceState.order == "" {
+            invalidOrder = true
+        } else {
+            invalidOrder = false
+        }
+        
+        if invalidPlace || invalidCuisineType || invalidOrder {
+            return false
+        }
+        
+        return true
+    }
+    
     func onSubmit(state: AddPlaceState) {
-        if !addPlaceState.validateState() {
+        if !validateAddPlaceState(state: state) {
             return;
         }
         
@@ -56,8 +86,10 @@ struct AddPlaceController: View {
                 } else {
                     PlaceShortDisplayView(place: addPlaceState.selectedPlace).allowsHitTesting(false)
                 }
+            }.if(invalidPlace) { view in
+                view.modifier(ErrorFieldModifer())
             }
-            AddPlaceView(state: $addPlaceState, onSubmit: self.onSubmit)
+            AddPlaceView(state: $addPlaceState, onSubmit: self.onSubmit, invalidCuisineType: $invalidCuisineType, invalidOrder: $invalidOrder)
         }
     }
 }

@@ -46,6 +46,8 @@
 		B365975E273A1E17008F95DD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365975D273A1E17008F95DD /* LoginController.swift */; };
 		B3659761273A2448008F95DD /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659760273A2448008F95DD /* AuthState.swift */; };
 		B3659765273C899C008F95DD /* AddPlaceStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659764273C899C008F95DD /* AddPlaceStateModel.swift */; };
+		B3659767273C968E008F95DD /* ErrorFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659766273C968E008F95DD /* ErrorFieldModifier.swift */; };
+		B3659769273C97B0008F95DD /* If.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659768273C97B0008F95DD /* If.swift */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -114,6 +116,8 @@
 		B365975F273A23A8008F95DD /* Sauce.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sauce.entitlements; sourceTree = "<group>"; };
 		B3659760273A2448008F95DD /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		B3659764273C899C008F95DD /* AddPlaceStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceStateModel.swift; sourceTree = "<group>"; };
+		B3659766273C968E008F95DD /* ErrorFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFieldModifier.swift; sourceTree = "<group>"; };
+		B3659768273C97B0008F95DD /* If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = If.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
 		B3D687DA272A2C1200DABFD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B309C96F2736DB95008F2937 /* CardModifier.swift */,
+				B3659766273C968E008F95DD /* ErrorFieldModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			children = (
 				B3154A5D272E1279005BD745 /* Color.swift */,
 				B309C942272EEBA6008F2937 /* MKPlacemark.swift */,
+				B3659768273C97B0008F95DD /* If.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				B3154A52272DFFEE005BD745 /* AddPlaceButtonView.swift in Sources */,
 				B309C953272EFD42008F2937 /* PlaceSheetHeaderView.swift in Sources */,
 				B309C9782736DC28008F2937 /* PlaceEntryListView.swift in Sources */,
+				B3659767273C968E008F95DD /* ErrorFieldModifier.swift in Sources */,
 				B309C948272EF722008F2937 /* AppController.swift in Sources */,
 				B309C9702736DB95008F2937 /* CardModifier.swift in Sources */,
 				B3154A50272DFDF7005BD745 /* SampleData.swift in Sources */,
@@ -522,6 +529,7 @@
 				B3154A5E272E1279005BD745 /* Color.swift in Sources */,
 				B3154A60272E36A5005BD745 /* AddPlaceView.swift in Sources */,
 				B3154A4E272DF5FA005BD745 /* MapView.swift in Sources */,
+				B3659769273C97B0008F95DD /* If.swift in Sources */,
 				B309C959272F13E8008F2937 /* PlaceShortDisplayView.swift in Sources */,
 				B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */,
 				B309C941272EDC91008F2937 /* PlaceSearchController.swift in Sources */,

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct AddPlaceView: View {
     @Binding var state: AddPlaceState
-
     var onSubmit: ((AddPlaceState) -> Void)?
+    @Binding var invalidCuisineType: Bool
+    @Binding var invalidOrder: Bool
 
     var body: some View {
         Form {
@@ -33,28 +34,30 @@ struct AddPlaceView: View {
                 .labelsHidden()
                 .pickerStyle(.segmented)
                 
-                HStack(spacing: 80) {
+                HStack(spacing: 20) {
                     Text(CUISINE_TYPE_PICKER_LABEL)
                     TextField(
-                        "Cuisine type (separate with comma)",
+                        "Separate with comma",
                         text: $state.cuisineType
                     )
+                }.if(invalidCuisineType) { view in
+                    view.modifier(ErrorFieldModifer())
                 }
             }
             
             Section(header: Text(ORDER_SECTION_LABEL)) {
-                TextEditor(text: $state.order)
+                TextField("Ex. Hamburger, baconeggandcheese", text: $state.order).if(invalidOrder) { view in
+                    view.modifier(ErrorFieldModifer())
+                }
                 
-                VStack {
-                    Text(RATING_SLIDER_LABEL)
-                    HStack {
-                        PlaceAnnotationView(rating: state.rating, hideFeatures: true).padding(.trailing)
-                        Slider(
-                            value: $state.rating,
-                            in: 1...10,
-                            step: 1
-                        )
-                    }
+                HStack {
+                    Text(RATING_SLIDER_LABEL).padding(.trailing)
+                    PlaceAnnotationView(rating: state.rating, hideFeatures: true).padding(.trailing)
+                    Slider(
+                        value: $state.rating,
+                        in: 1...10,
+                        step: 1
+                    )
                 }
             }
             
