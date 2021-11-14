@@ -16,6 +16,7 @@ struct PlaceEntry: Identifiable {
     let cuisine: [String?]?
     let price: Int?
     let method: MethodOfEat?
+    let place: PlaceData
     
     // Init with data, normal usage
     init(entry: Entry) {
@@ -32,6 +33,7 @@ struct PlaceEntry: Identifiable {
         self.cuisine = entry.cuisine
         self.price = entry.price
         self.method = entry.method
+        self.place = entry.place
     }
     
     // Init with sample data usage
@@ -43,5 +45,6 @@ struct PlaceEntry: Identifiable {
         self.cuisine = cuisine
         self.price = price
         self.method = method
+        self.place = PlaceData(coordinate: [0, 0], name: "My favorite restaurant")
     }
 }

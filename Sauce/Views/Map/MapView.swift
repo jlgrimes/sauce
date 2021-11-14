@@ -34,6 +34,6 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(allPlaces: SAMPLE_ALL_PLACES, region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_PLACE), bottomSheetPosition: .constant(.bottom))
+        MapView(allPlaces: AllPlaces(places: []), region: .constant(SAMPLE_REGION), selectedPlace: .constant(SAMPLE_PLACE), bottomSheetPosition: .constant(.bottom))
     }
 }

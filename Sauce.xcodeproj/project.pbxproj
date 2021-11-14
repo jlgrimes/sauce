@@ -49,6 +49,7 @@
 		B3659767273C968E008F95DD /* ErrorFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659766273C968E008F95DD /* ErrorFieldModifier.swift */; };
 		B3659769273C97B0008F95DD /* If.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3659768273C97B0008F95DD /* If.swift */; };
 		B365976B273CAF4A008F95DD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365976A273CAF4A008F95DD /* LocationManager.swift */; };
+		B365976F273CC4A8008F95DD /* PlaceEntryDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365976E273CC4A8008F95DD /* PlaceEntryDetailedView.swift */; };
 		B3D687D9272A2C1200DABFD5 /* SauceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687D8272A2C1200DABFD5 /* SauceApp.swift */; };
 		B3D687DB272A2C1200DABFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D687DA272A2C1200DABFD5 /* ContentView.swift */; };
 		B3D687DD272A2C1300DABFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D687DC272A2C1300DABFD5 /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		B3659766273C968E008F95DD /* ErrorFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFieldModifier.swift; sourceTree = "<group>"; };
 		B3659768273C97B0008F95DD /* If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = If.swift; sourceTree = "<group>"; };
 		B365976A273CAF4A008F95DD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B365976E273CC4A8008F95DD /* PlaceEntryDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEntryDetailedView.swift; sourceTree = "<group>"; };
 		B3D687D5272A2C1200DABFD5 /* Sauce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sauce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D687D8272A2C1200DABFD5 /* SauceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApp.swift; sourceTree = "<group>"; };
 		B3D687DA272A2C1200DABFD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				B309C9752736DC1F008F2937 /* PlaceEntryView.swift */,
 				B309C9772736DC28008F2937 /* PlaceEntryListView.swift */,
+				B365976E273CC4A8008F95DD /* PlaceEntryDetailedView.swift */,
 			);
 			path = PlaceCommon;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				B3659769273C97B0008F95DD /* If.swift in Sources */,
 				B309C959272F13E8008F2937 /* PlaceShortDisplayView.swift in Sources */,
 				B3154A48272DC40F005BD745 /* PlaceAnnotationView.swift in Sources */,
+				B365976F273CC4A8008F95DD /* PlaceEntryDetailedView.swift in Sources */,
 				B309C941272EDC91008F2937 /* PlaceSearchController.swift in Sources */,
 				B309C955272F0271008F2937 /* SearchBarView.swift in Sources */,
 				B309C93B272EDB18008F2937 /* PlaceSearchView.swift in Sources */,
